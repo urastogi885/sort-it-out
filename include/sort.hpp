@@ -25,6 +25,13 @@ public:
 	void insertion_sort(std::vector<int> &arr);
 
 	/*
+	* @brief sort an array using bubble-sort
+	* @param pointer to the array
+	* @return none
+	*/
+	void bubble_sort(std::vector<int> &arr);
+
+	/*
 	* @brief sort an array using insertion-sort
 	* @param pointer to the array
 	* @param sub-array ending index

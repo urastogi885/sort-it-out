@@ -13,7 +13,7 @@ void print(std::vector<int> const &arr);
 int main() {
 	std::vector<int> array_to_sort{5, 2, 4, 6, 1, 3};
 	Sort sort;
-	sort.merge_sort(array_to_sort, 0, int(array_to_sort.size()));
+	sort.bubble_sort(array_to_sort);
 	print(array_to_sort);
 	return 0;
 }

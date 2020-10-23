@@ -16,9 +16,23 @@ void Sort::insertion_sort(std::vector<int> &arr) {
 		i = j - 1;
 		while (i >= 0 && arr[i] > temp) {
 			arr[i + 1] = arr[i];
-			i -= 1;
+			i--;
 		}
 		arr[i + 1] = temp;
+	}
+}
+
+void Sort::bubble_sort(std::vector<int> &arr) {
+	int arr_size = arr.size();
+	int temp;
+	for (int i = 0; i < arr_size - 1; i++) {
+		for (int j = arr_size - 1; j > i; j--) {
+			if (arr[j] < arr[j - 1]) {
+				temp = arr[j - 1];
+				arr[j - 1] = arr[j];
+				arr[j] = temp;
+			}
+		}
 	}
 }
 
