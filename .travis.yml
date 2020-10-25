@@ -1,6 +1,4 @@
-# We need a decent ubuntu dist
 os: linux
-dist: trusty
 
 # Modern cpp settings from
 #  http://genbattle.bitbucket.org/blog/2016/01/17/c++-travis-ci/
