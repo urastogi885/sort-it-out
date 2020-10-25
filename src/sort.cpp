@@ -7,7 +7,7 @@
 
 #include <sort.hpp>
 
-void Sort::insertion_sort(std::vector<int> &arr) {
+void Sort::insertion_sort(vector<int> &arr) {
 	// Define type of variables
 	int temp;
 	int i;
@@ -22,21 +22,19 @@ void Sort::insertion_sort(std::vector<int> &arr) {
 	}
 }
 
-void Sort::bubble_sort(std::vector<int> &arr) {
+void Sort::bubble_sort(vector<int> &arr) {
 	int arr_size = arr.size();
-	int temp;
 	for (int i = 0; i < arr_size - 1; i++) {
 		for (int j = arr_size - 1; j > i; j--) {
 			if (arr[j] < arr[j - 1]) {
-				temp = arr[j - 1];
-				arr[j - 1] = arr[j];
-				arr[j] = temp;
+				swap(arr[j], arr[j - 1]);
 			}
 		}
 	}
 }
 
-void Sort::merge_sort(std::vector<int> &arr, int p, int r) {
+///////// Implementation of methods involved in Merge-Sort /////////
+void Sort::merge_sort(vector<int> &arr, int p, int r) {
 	if (p < r) {
 		int q = (p + r) / 2;
 		merge_sort(arr, p, q);
@@ -45,11 +43,11 @@ void Sort::merge_sort(std::vector<int> &arr, int p, int r) {
 	}
 }
 
-void Sort::merge(std::vector<int> &arr, int p, int q, int r) {
+void Sort::merge(vector<int> &arr, int p, int q, int r) {
 	int n1 = q - p + 1;
 	int n2 = r - q;
-	std::vector<int> l_arr;
-	std::vector<int> r_arr;
+	vector<int> l_arr;
+	vector<int> r_arr;
 
 	for (int i = 0; i < n1; i++) {
 		l_arr.push_back(arr[p + i]);
@@ -79,4 +77,41 @@ void Sort::merge(std::vector<int> &arr, int p, int q, int r) {
       arr[k] = r_arr[j];
       j++; k++;
    }
+}
+
+///////// Implementation of methods involved in Heap-Sort /////////
+void Sort::heap_sort(vector<int> &arr) {
+	int n = arr.size();
+	// Build heap (rearrange array) 
+    build_max_heap(arr, n);
+
+    for (int i=n-1; i>0; i--) {
+        swap(arr[0], arr[i]);
+        max_heapify(arr, i, 0); 
+    } 
+}
+
+void Sort::build_max_heap(vector<int> &arr, int size) {
+	for (int i = size / 2 - 1; i >= 0; i--) {
+        max_heapify(arr, size, i);
+    }
+}
+
+void Sort::max_heapify(vector<int> &arr, int n, int k) {
+	int largest = k;
+    int l = 2*k + 1;
+    int r = 2*k + 2;
+
+    if (l < n && arr[l] > arr[largest]) {
+        largest = l;
+    }
+  
+    if (r < n && arr[r] > arr[largest]) {
+        largest = r;
+    }
+
+    if (largest != k) {
+        swap(arr[k], arr[largest]);
+        max_heapify(arr, n, largest);
+    } 
 }
