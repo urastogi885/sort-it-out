@@ -115,3 +115,25 @@ void Sort::max_heapify(vector<int> &arr, int n, int k) {
         max_heapify(arr, n, largest);
     } 
 }
+
+///////// Implementation of methods involved in Merge-Sort /////////
+void Sort::quick_sort(vector<int> &arr, int p, int r) {
+	if (p < r) {
+		int q = partition(arr, p, r);
+		quick_sort(arr, p, q - 1);
+		quick_sort(arr, q + 1, r);
+	}
+}
+
+int Sort::partition(vector<int> &arr, int p, int r) {
+	int x = arr[r];
+	int i = p - 1;
+	for (int j = p; j <= r - 1; j++) {
+		if (arr[j] <= x) {
+			i++;
+			swap(arr[i], arr[j]);
+		}
+	}
+	swap(arr[i+1], arr[r]);
+	return i+1;
+}
