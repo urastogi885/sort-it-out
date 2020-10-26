@@ -83,7 +83,7 @@ public:
 	* @param pointer to the array
 	* @return none
 	*/
-	void quick_sort(vector<int> &arr);
+	void quick_sort(vector<int> &arr, int p, int r);
 
 	/*
 	* @brief partition the array
