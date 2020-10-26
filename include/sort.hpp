@@ -76,6 +76,21 @@ public:
 	* @return none
 	*/
 	void max_heapify(vector<int> &arr, int n, int k);
+
+	///////// Declarations for Quicksort /////////
+	/*
+	* @brief sort an array using quick-sort
+	* @param pointer to the array
+	* @return none
+	*/
+	void quick_sort(vector<int> &arr);
+
+	/*
+	* @brief partition the array
+	* @param pointer to the array
+	* @return none
+	*/
+	void partition(vector<int> &arr, int p, int r);
 };
 
 #endif // INCLUDE_SORT_HPP_
