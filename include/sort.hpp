@@ -88,9 +88,9 @@ public:
 	/*
 	* @brief partition the array
 	* @param pointer to the array
-	* @return none
+	* @return next index
 	*/
-	void partition(vector<int> &arr, int p, int r);
+	int partition(vector<int> &arr, int p, int r);
 };
 
 #endif // INCLUDE_SORT_HPP_
