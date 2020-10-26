@@ -13,7 +13,7 @@ void print(vector<int> const &arr);
 int main() {
 	vector<int> array_to_sort{5, 2, 4, 6, 1, 3};
 	Sort sort;
-	sort.quick_sort(array_to_sort);
+	sort.quick_sort(array_to_sort, 1, int(array_to_sort.size()));
 	print(array_to_sort);
 	return 0;
 }
