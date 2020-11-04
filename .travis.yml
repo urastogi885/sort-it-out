@@ -30,7 +30,6 @@ script:
   - cd build
   - cmake ../
   - make
-  - ./src/sort-it-out
 
 notifications:
   email: false
